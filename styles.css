@@ -9,6 +9,7 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     margin: 100px;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
 #menu::before,
@@ -29,4 +30,28 @@
 #menu::after {
     left: 0;
     top: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container:hover {
+    margin: 0;
+}
+
+.container:hover #menu {
+    background-color: transparent;
+    transition: ease-in .35s;
+}
+
+.container:hover #menu::before {
+    transform: translateX(0)translateY(1.2em) rotate(45deg);
+    transition: ease-in .35s;
+}
+
+.container:hover #menu::after {
+    transform: translateX(0)translateY(-1.2em) rotate(-45deg);
+    transition: ease-in .35s;
 }
